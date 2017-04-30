@@ -1,0 +1,48 @@
+<form class="form-horizontal">
+    <fieldset>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+                <legend>Mortgage Calculator</legend>
+            </div>
+        </div>
+        <!-- loan balance input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="balance">Loan Balance</label>
+            <div class="col-md-4">
+                <input ng-model="vm.balance" type="number" class="form-control input-md">
+            </div>
+        </div>
+        <!-- rate input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="rate">Interest Rate (%)</label>
+            <div class="col-md-4">
+                <input ng-model="vm.rate" type="number" class="form-control input-md">
+            </div>
+        </div>
+        <!-- term input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="term">Loan Term (years)</label>
+            <div class="col-md-4">
+                <input ng-model="vm.term" type="number" REA class="form-control input-md">
+            </div>
+        </div>
+        <!-- period Basic -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="period">Period</label>
+            <div class="col-md-4">
+                <select ng-model="vm.period" class="form-control">
+                    <option value="12">Monthly</option>
+                    <option value="6">Bimonthly</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4">
+                <button class="btn btn-primary" ng-click="vm.calculatePayment();">Calculate</button>
+                <br/>
+                <br/>
+                <h3 id="output">{{vm.result}}</h3>
+            </div>
+        </div>
+    </fieldset>
+</form>
